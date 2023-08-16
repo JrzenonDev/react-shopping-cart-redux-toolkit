@@ -1,6 +1,4 @@
 import "./slider.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { slide } from "../../assets/data/data";
 
 export const Slider = () => {
