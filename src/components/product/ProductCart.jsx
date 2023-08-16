@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom/cjs/react-router-dom";
+import { Link } from "react-router-dom";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import "./product.css";
-
+// eslint-disable-next-line react/prop-types
 export const ProductCart = ({ id, cover, name, price }) => {
   return (
     <>
       <div className="box boxItems" id="product">
         <div className="img">
-          <Link>
+          <Link to={`/product/${id}`}>
             <img src={cover} alt="cover" />
           </Link>
         </div>
