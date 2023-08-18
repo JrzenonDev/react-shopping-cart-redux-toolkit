@@ -25,7 +25,6 @@ export const Register = () => {
             <span>Confirm Password *</span>
             <input type="text" name="" id="" required />
             <button className="button">Register</button>
-            <p>teste</p>
             <Link to="/login">SignIn</Link>
           </form>
         </div>
