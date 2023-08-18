@@ -30,7 +30,7 @@ export const User = () => {
                 <div className="image">
                   <Link to="/account">
                     <div className="img">
-                      <img src={UserAvatar} alt="User avatar" />
+                      <img src={UserAvatar} alt="User avatar image" />
                     </div>
                   </Link>
                   <div className="text">
