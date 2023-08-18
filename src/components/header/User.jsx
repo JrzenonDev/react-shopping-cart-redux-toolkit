@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import UserAvatar from "../../assets/images/user.png";
 import { IoSettingsOutline } from "react-icons/io5";
 import { BsBagCheck } from "react-icons/bs";
@@ -27,18 +28,22 @@ export const User = () => {
             {profileOpen && (
               <div className="openProfile boxItems" onClick={close}>
                 <div className="image">
-                  <div className="img">
-                    <img src={UserAvatar} alt="User avatar" />
-                  </div>
+                  <Link to="/account">
+                    <div className="img">
+                      <img src={UserAvatar} alt="User avatar" />
+                    </div>
+                  </Link>
                   <div className="text">
                     <h4>Eden Smith</h4>
                     <label htmlFor="">Los Angeles, CA</label>
                   </div>
                 </div>
-                <button className="box">
-                  <IoSettingsOutline className="icon" />
-                  <h4>My Account</h4>
-                </button>
+                <Link to="/login">
+                  <button className="box">
+                    <IoSettingsOutline className="icon" />
+                    <h4>My Account</h4>
+                  </button>
+                </Link>
                 <button className="box">
                   <BsBagCheck className="icon" />
                   <h4>My Order</h4>

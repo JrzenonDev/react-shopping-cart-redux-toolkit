@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Medicine from "../../assets/images/Medicine.svg";
 import { AiOutlineSearch } from "react-icons/ai";
 import "./header.css";
@@ -15,7 +16,9 @@ export const Header = () => {
     <header className="header">
       <div className="scontainer flex">
         <div className="logo">
-          <img src={Medicine} alt="Medicine" />
+          <Link to="/">
+            <img src={Medicine} alt="Medicine" />
+          </Link>
         </div>
         <div className="search flex">
           <AiOutlineSearch className="searchIcon" />
