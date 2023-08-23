@@ -12,6 +12,13 @@ export const Card = () => {
 
   const quantity = useSelector((state) => state.cart.totalQuantity);
   const cartItems = useSelector((state) => state.cart.itemsList);
+
+  // total
+  let total = 0;
+  const itemsList = useSelector((state) => state.cart.itemsList);
+  itemsList.forEach((item) => {
+    total += item.totalPrice;
+  });
   return (
     <>
       <div className="card" onClick={() => setCardOpen(!cardOpen)}>
@@ -41,7 +48,7 @@ export const Card = () => {
         <div className="checkOut">
           <button>
             <span>Priceed To Checkout</span>
-            <label>$ 240</label>
+            <label>$ {total}</label>
           </button>
         </div>
       </div>
