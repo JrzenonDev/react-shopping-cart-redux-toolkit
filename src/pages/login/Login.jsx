@@ -1,8 +1,15 @@
-import { Link } from "react-router-dom";
 import "./login.css";
 import back from "../../assets/images/my-account.jpg";
+import { useDispatch } from "react-redux";
+import { authActions } from "../../store/authSlice";
 
 export const Login = () => {
+  const dispatch = useDispatch();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(authActions.login());
+  };
+
   return (
     <>
       <section className="login">
@@ -15,14 +22,12 @@ export const Login = () => {
             </div>
           </div>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <span>Username or Email address</span>
-            <input type="text" name="" id="" required />
+            <input type="text" name="" id="name" required />
             <span>Password *</span>
-            <input type="text" name="" id="" required />
+            <input type="password" name="" id="password" required />
             <button className="button">Login</button>
-
-            <Link to="/register">Signup</Link>
           </form>
         </div>
       </section>
