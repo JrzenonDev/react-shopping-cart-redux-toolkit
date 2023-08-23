@@ -6,6 +6,8 @@ import { BsBagCheck } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { GrHelp } from "react-icons/gr";
 import { BiLogOut } from "react-icons/bi";
+import { useDispatch } from "react-redux";
+import { authActions } from "../../store/authSlice";
 
 export const User = () => {
   const user = true;
@@ -13,6 +15,12 @@ export const User = () => {
 
   const close = () => {
     setProfileOpen(null);
+  };
+
+  const dispatch = useDispatch();
+  const logoutHandler = (e) => {
+    e.preventDefault();
+    dispatch(authActions.logout());
   };
   return (
     <>
@@ -56,7 +64,7 @@ export const User = () => {
                   <GrHelp className="icon" />
                   <h4>Help</h4>
                 </button>
-                <button className="box">
+                <button className="box" onClick={logoutHandler}>
                   <BiLogOut className="icon" />
                   <h4>Log Out</h4>
                 </button>
